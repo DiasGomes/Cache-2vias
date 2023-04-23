@@ -1,0 +1,49 @@
+module tb_parteIII(); 
+	
+	reg CLK;
+	wire[17:0] SW; 
+	wire [3:0] KEY;
+	wire[6:0] HEX0, HEX1, HEX2, HEX3;
+	wire [17:0] LEDG;
+	
+	parteIII p(SW, KEY, HEX0, HEX1, HEX2, HEX3, LEDG);
+	
+	// clock
+	initial
+	begin
+		forever	
+			begin
+				#5 CLK = ~CLK; 
+			end
+	end
+	
+	assign KEY[3] = CLK;
+	
+	// mostra os resultados
+	initial 
+	begin
+		$display("===========================================================");
+		$display("------------------- INICIO DA SIMULACAO -------------------");
+		$display("===========================================================\n");
+		forever	
+			begin
+					#10 $display("WRITE %b TAG %3b DADO %0d INDICE %b",p._read_write ,p._tag, p._data, p._indice);
+					$display("ENDERECO %8b HIT OU MISS %b VALIDO %b LRU %b DIRTY %b TAGOUT %3b DATAOUT %0d", p.sys.address, p._hit_miss, p._valido, p._lru, p._dirty, p._tag_out, p._data_out);
+					$display("--------------------------------------------------------------");
+			end
+	end
+	
+	// insere dados do teste
+	initial 
+	begin
+		#10 assign SW = 17'b00000000100000111;
+		#10 assign SW = 17'b00000000100100110;
+		#10 assign SW = 17'b00000000101000101;
+		#10 assign SW = 17'b00000000101100100;
+		#10 assign SW = 17'b00000000110000011;
+		#10 assign SW = 17'b00000000110100010;
+		#10 assign SW = 17'b00000000111000001;
+		#10 assign SW = 17'b00000000111100000;
+	end
+
+endmodule;

@@ -1,0 +1,540 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do parteIII_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/parteIII.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module parteIII
+# 
+# Top level modules:
+# 	parteIII
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/cache2vias.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module cache2vias
+# 
+# Top level modules:
+# 	cache2vias
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/sistema.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sistema
+# 
+# Top level modules:
+# 	sistema
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/extensor3para8.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module extensor3para8
+# 
+# Top level modules:
+# 	extensor3para8
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/controleCache.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module controleCache
+# 
+# Top level modules:
+# 	controleCache
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/memoriaram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memoriaRam
+# 
+# Top level modules:
+# 	memoriaRam
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/decodificador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module decodificador
+# 
+# Top level modules:
+# 	decodificador
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada\ -\ controlecache {C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/tb_parteIII.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_parteIII
+# 
+# Top level modules:
+# 	tb_parteIII
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  tb_parteIII
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_parteIII 
+# Loading work.tb_parteIII
+# Loading work.parteIII
+# Loading work.sistema
+# Loading work.memoriaRam
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.cache2vias
+# Loading work.controleCache
+# Loading work.extensor3para8
+# Loading work.decodificador
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ===========================================================
+# ------------------- INICIO DA SIMULACAO -------------------
+# ===========================================================
+# 
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 100 INDICE 0 DADO x
+# 
+# SAIDA
+# HIT x 	WRITEBACK 0 
+# ADDRESS_CACHE x DADO-CACHE x
+# 
+# RAM
+# WREN x DADO-IN x ADDRESS 16 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      0      0    0  100  1
+#   1      1      0    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      0      0    0  xxx  2
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 100 INDICE 0 DADO x
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 0 
+# ADDRESS_CACHE 0 DADO-CACHE 1
+# 
+# RAM
+# WREN 0 DADO-IN 1 ADDRESS 16 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  1
+#   1      1      0    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      0      0    0  xxx  2
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 100 INDICE 0 DADO x
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 0 
+# ADDRESS_CACHE 0 DADO-CACHE 0
+# 
+# RAM
+# WREN 0 DADO-IN 0 ADDRESS 16 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      0    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      0      0    0  xxx  2
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 101 INDICE 0 DADO x
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 0 
+# ADDRESS_CACHE 4 DADO-CACHE 2
+# 
+# RAM
+# WREN 0 DADO-IN 2 ADDRESS 20 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  100  0
+#   1      1      0    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  101  2
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 101 INDICE 0 DADO x
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 0 
+# ADDRESS_CACHE 4 DADO-CACHE 0
+# 
+# RAM
+# WREN 0 DADO-IN 0 ADDRESS 20 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  100  0
+#   1      1      0    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  101  0
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 100 INDICE 0 DADO x
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 0 DADO-CACHE 0
+# 
+# RAM
+# WREN 0 DADO-IN 0 ADDRESS 16 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      0    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 100 INDICE 0 DADO x
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 0 DADO-CACHE 0
+# 
+# RAM
+# WREN 0 DADO-IN 0 ADDRESS 16 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      0    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 000 INDICE 1 DADO 7
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 1 DADO-CACHE 3
+# 
+# RAM
+# WREN 0 DADO-IN 3 ADDRESS 1 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  3
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 000 INDICE 1 DADO 7
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 1 DADO-CACHE 7
+# 
+# RAM
+# WREN 0 DADO-IN 7 ADDRESS 1 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      0    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 111 INDICE 2 DADO 2
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 6 DADO-CACHE 6
+# 
+# RAM
+# WREN 0 DADO-IN 6 ADDRESS 30 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    1  111  6
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 111 INDICE 2 DADO 2
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 6 DADO-CACHE 2
+# 
+# RAM
+# WREN 0 DADO-IN 2 ADDRESS 30 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    0  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    1  111  2
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 110 INDICE 2 DADO 3
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 1 
+# ADDRESS_CACHE 2 DADO-CACHE 5
+# 
+# RAM
+# WREN 1 DADO-IN 5 ADDRESS 22 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    1  101  5
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    0  111  2
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 110 INDICE 2 DADO 3
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 1 
+# ADDRESS_CACHE 2 DADO-CACHE 0
+# 
+# RAM
+# WREN 1 DADO-IN 0 ADDRESS 22 DADO-RAM 5
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    1  101  0
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    0  111  2
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 110 INDICE 2 DADO 3
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 2 DADO-CACHE 0
+# 
+# RAM
+# WREN 0 DADO-IN 0 ADDRESS 26 DADO-RAM 5
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    1  110  0
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    0  111  2
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 1 TAG 110 INDICE 2 DADO 3
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 2 DADO-CACHE 3
+# 
+# RAM
+# WREN 0 DADO-IN 3 ADDRESS 26 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    1  110  3
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    0  111  2
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 001 INDICE 2 DADO x
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 1 
+# ADDRESS_CACHE 6 DADO-CACHE 2
+# 
+# RAM
+# WREN 1 DADO-IN 2 ADDRESS 30 DADO-RAM 0
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    0  110  3
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    1  111  2
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 01 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 001 INDICE 2 DADO x
+# 
+# SAIDA
+# HIT 0 	WRITEBACK 1 
+# ADDRESS_CACHE 6 DADO-CACHE 0
+# 
+# RAM
+# WREN 1 DADO-IN 0 ADDRESS 30 DADO-RAM 2
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    0  110  3
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      1    1  111  0
+#   3      0      x    x  xxx  x
+# -------------- CLOCK 00 ----------------
+# 
+# ENTRADA
+# WRITE 0 TAG 001 INDICE 2 DADO x
+# 
+# SAIDA
+# HIT 1 	WRITEBACK 0 
+# ADDRESS_CACHE 6 DADO-CACHE 0
+# 
+# RAM
+# WREN 0 DADO-IN 0 ADDRESS 6 DADO-RAM 2
+# 
+# CACHE 0
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    1  100  0
+#   1      1      1    1  000  7
+#   2      1      1    0  110  3
+#   3      0      x    x  xxx  x
+# 
+# CACHE 1
+# INDICE VALIDO DIRTY LRU TAG DADO
+#   0      1      0    0  101  0
+#   1      0      0    0  xxx  4
+#   2      1      0    1  001  0
+#   3      0      x    x  xxx  x
+# Break in Module tb_parteIII at C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/tb_parteIII.v line 67
+# Simulation Breakpoint: Break in Module tb_parteIII at C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/tb_parteIII.v line 67
+# MACRO ./parteIII_run_msim_rtl_verilog.do PAUSED at line 23
+# A time value could not be extracted from the current line

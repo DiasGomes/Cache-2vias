@@ -1,0 +1,63 @@
+module cache2vias(tag, indice, data, clock, read_write, hit_miss, valido, lru, dirty, tag_out, data_out);
+// inputs
+	input	[2:0] tag, data; 
+	input [1:0] indice;
+	input clock, read_write;
+	
+// outputs
+	output hit_miss, valido, lru, dirty;
+	output[2:0] tag_out, data_out;
+
+// caches
+	reg [3:0] cache1[8:0];
+	reg [3:0] cache2[8:0];
+	
+	// convertendo sinais de 3 bits para 8 bits
+	wire[7:0] address;
+	assign address[2:0] = tag;
+	assign address[7:3] = 5'b00000;
+	
+	wire[7:0] data_in;
+	assign data_in[2:0] = data;
+	assign data_in[7:3] = 5'b00000;
+	
+	// convertendo sinal de saida de 8 bits para 3 bits
+	wire[7:0] out;
+	assign data_out[2:0] = out[2:0];
+		
+	// instanciando a memoria
+	memoriaRam ram(address,clock,data_in,read_write,out);
+	
+	// Considerando os dados já preenchidos na Cache
+	initial
+	  begin	  
+			// instancia a cache 1
+			cache1[0] = 9'b000100001;	
+			cache1[1] = 9'b101000011;	
+			cache1[2] = 9'b110101101;	
+			cache1[3] = 9'b0xxxxxxxx;
+			// instancia a cache 2
+			cache2[0] = 9'b000xxx010;	
+			cache2[1] = 9'b000xxx100;	
+			cache2[2] = 9'b101111110;	
+			cache2[3] = 9'b0xxxxxxxx;	
+	 end
+	 
+	// logica da cache
+	always @(posedge clock)
+	begin
+		// escrita
+		if(read_write == 0'b1) 
+			begin
+				// cache 1
+				if(cahe1[indice][5:3] == tag) 
+					begin
+						data_out = cache1[indice][2:0];
+						hit_miss = cache1[indice][8] and 1'b1; 
+					end 
+				// cache 2
+			end 
+		// leitura
+	end
+
+endmodule

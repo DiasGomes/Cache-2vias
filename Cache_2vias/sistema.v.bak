@@ -1,0 +1,298 @@
+module sistema(tag, indice, data, clock, read_write, hit_miss, valido, lru, dirty, writeback,tag_out, data_out);
+// inputs
+	input	[2:0] tag, data; 
+	input [1:0] indice;
+	input clock, read_write;
+	
+// outputs
+	output reg hit_miss, valido, lru, dirty, writeback;
+	output reg[2:0] tag_out, data_out;
+
+// caches --> são duas matrizes de 4 linhas com cada uma comportando 9 bits
+	reg [8:0] cache1[3:0];
+	reg [8:0] cache2[3:0];
+	
+// controle da memoria RAM
+	reg writeRAM;
+	reg[7:0] address;
+	reg[7:0] data_in;
+	wire[7:0] out;
+		
+	// instanciando a memoria RAM
+	memoriaRam ram(address,clock,data_in, writeRAM,out);
+	
+	// Considerando os dados já preenchidos nas caches
+	initial
+	  begin	  
+			// instancia a cache 1
+			cache1[0] = 9'b000100001;	
+			cache1[1] = 9'b101000011;	
+			cache1[2] = 9'b110101101;	
+			cache1[3] = 9'b0xxxxxxxx;
+			// instancia a cache 2
+			cache2[0] = 9'b000xxx010;	
+			cache2[1] = 9'b000xxx100;	
+			cache2[2] = 9'b101111110;	
+			cache2[3] = 9'b0xxxxxxxx;	
+	 end
+	 
+	// logica da cache na borda de subida
+	always @(posedge clock)
+	begin
+		// ================== ESCRITA ==================
+		if(read_write == 1'b1) 
+			begin
+				// cache 1
+				if(cache1[indice][5:3] == tag) 
+					begin
+						// zera sinal de write back
+						writeback = 1'b0;
+						// atualiza LRU
+						cache1[indice][6] = 1'b1;	// mais novo
+						cache2[indice][6] = 1'b0;	// mais antigo
+						// deu hit
+						hit_miss = 1'b1;
+						// atualiza dirty
+						cache1[indice][7] = 1'b1;
+						// atualiza valor da cache
+						cache1[indice][2:0] = data;
+						// retorna conteudo
+						data_out = cache1[indice][2:0];
+					end 
+					
+				// cache 2
+				else if(cache2[indice][5:3] == tag) 
+					begin
+						// zera sinal de write back
+						writeback = 1'b0;
+						// atualiza LRU
+						cache2[indice][6] = 1'b1;	// mais novo
+						cache1[indice][6] = 1'b0;	// mais antigo
+						// deu hit
+						hit_miss = 1'b1;
+						// atualiza dirty
+						cache2[indice][7] = 1'b1;
+						// atualiza valor da cache
+						cache2[indice][2:0] = data;
+						// retorna conteudo
+						data_out = cache2[indice][2:0];
+					end
+					
+				// Write Miss – com write back
+				else
+					begin
+						// deu miss
+						hit_miss = 1'b0;
+						// writeback
+						writeback = 1'b1;
+						// escreve na ram
+					end
+			end 
+		// ================== LEITURA ==================
+		else 
+			begin
+				// cache 1
+				if(cache1[indice][5:3] == tag) 
+					begin
+						// atualiza LRU
+						cache1[indice][6] = 1'b1;	// mais novo
+						cache2[indice][6] = 1'b0;	// mais antigo
+							
+						// conteudo valido
+						if(cache1[indice][8] == 1'b1) 
+							begin
+								// zera sinal de write back
+								writeback = 1'b0;
+								// deu hit
+								hit_miss = 1'b1;
+							end 
+						// conteudo invalido
+						else
+							begin
+								// deu miss
+								hit_miss = 1'b0;
+								// ativa sinal de write back
+								writeback = 1'b1;
+								// passa a ser valido ao trazer novo dado
+								cache1[indice][8] = 1'b1;
+								// trazer dado da ram 
+								// ...
+							end 
+						
+						// retorna conteudo
+						data_out = cache1[indice][2:0];
+						// retorna valido
+						valido = cache1[indice][8];
+					end 
+				// cache 2
+				else if(cache2[indice][5:3] == tag)
+					begin
+						// zera sinal de write back
+						writeback = 1'b0;
+						// atualiza LRU
+						cache2[indice][6] = 1'b1;	// mais novo
+						cache1[indice][6] = 1'b0;	// mais antigo
+							
+						// conteudo valido
+						if(cache2[indice][8] == 1'b1) 
+							begin
+								// deu hit
+								hit_miss = 1'b1;
+							end 
+						// conteudo invalido
+						else
+							begin
+								// deu miss
+								hit_miss = 1'b0;
+								// passa a ser valido ao trazer novo dado
+								cache2[indice][8] = 1'b1;
+								// trazer dado da ram
+								// ...
+							end
+						
+						// retorna conteudo
+						data_out = cache2[indice][2:0];
+						// retorna valido
+						valido = cache2[indice][8];
+					end
+				// read miss com write back
+				else 
+					begin
+						// habilita escrita na ram
+						writeback = 1'b1;	
+						// deu miss
+						hit_miss = 1'b0;
+						// atualiza dirty
+						cache2[indice][7] = 1'b0;
+						/*
+						writeRAM = 1'b1;	
+						
+						// converte dado para 8 bits
+						address[7:3] = 5'b00000;
+						data_in[7:3] = 5'b00000;
+						// verifica LRU, oque for zero (mais antigo) deve ser trocado
+						if(cache1[indice][6] == 1'b0)
+							begin
+								// escreva na RAM
+								address[2:0] = cache1[indice][5:3];
+								data_in[2:0] = cache1[indice][2:0];
+							end
+						else 
+							begin
+								// escreva na RAM
+								address = cache2[indice][5:3];
+								data_in[2:0] = cache2[indice][2:0];
+							end
+						*/
+					end
+			end
+	end
+	
+	// logica da cache na borda de descida
+	always @(negedge clock)
+	begin
+		// ================== ESCRITA ==================
+		if(read_write == 1'b1) 
+			begin
+				// cache 1
+				if(cache1[indice][5:3] == tag) 
+					begin
+						
+					end 
+					
+				// cache 2
+				else if(cache2[indice][5:3] == tag) 
+					begin
+						
+					end
+					
+				// Write Miss – com write back
+				else
+					begin
+						
+					end
+			end 
+		// ================== LEITURA ==================
+		else 
+			begin
+				// cache 1
+				if(cache1[indice][5:3] == tag) 
+					begin
+						=	
+						// conteudo valido
+						if(cache1[indice][8] == 1'b1) 
+							begin
+								
+							end 
+						// conteudo invalido
+						else
+							begin
+								// trazer dado da ram 
+								// ...
+							end 
+						
+						// retorna conteudo
+						data_out = cache1[indice][2:0];
+						// retorna valido
+						valido = cache1[indice][8];
+					end 
+				// cache 2
+				else if(cache2[indice][5:3] == tag)
+					begin
+						// conteudo valido
+						if(cache2[indice][8] == 1'b1) 
+							begin
+								// deu hit
+								hit_miss = 1'b1;
+							end 
+						// conteudo invalido
+						else
+							begin
+								// deu miss
+								hit_miss = 1'b0;
+								// passa a ser valido ao trazer novo dado
+								cache2[indice][8] = 1'b1;
+								// trazer dado da ram
+								// ...
+							end
+						
+						// retorna conteudo
+						data_out = cache2[indice][2:0];
+						// retorna valido
+						valido = cache2[indice][8];
+					end
+				// read miss com write back
+				else 
+					begin
+						// habilita escrita na ram
+						writeback = 1'b1;	
+						// deu miss
+						hit_miss = 1'b0;
+						// atualiza dirty
+						cache2[indice][7] = 1'b0;
+						/*
+						writeRAM = 1'b1;	
+						
+						// converte dado para 8 bits
+						address[7:3] = 5'b00000;
+						data_in[7:3] = 5'b00000;
+						// verifica LRU, oque for zero (mais antigo) deve ser trocado
+						if(cache1[indice][6] == 1'b0)
+							begin
+								// escreva na RAM
+								address[2:0] = cache1[indice][5:3];
+								data_in[2:0] = cache1[indice][2:0];
+							end
+						else 
+							begin
+								// escreva na RAM
+								address = cache2[indice][5:3];
+								data_in[2:0] = cache2[indice][2:0];
+							end
+						*/
+					end
+			end
+	end
+	
+
+endmodule

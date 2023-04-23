@@ -1,0 +1,169 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\QuartusProjects\LAOC_II\Atividade01\Pratica03_centrada - controlecache\simulation\modelsim
+vcache2vias
+ISQ0ODUn@z6LEK7zV?2HBD2
+Vd=9`e?UoW9_O?jKzkPP0a3
+Z1 dC:\altera\13.0sp1\QuartusProjects\LAOC_II\Atividade01\Pratica03_centrada - controlecache\simulation\modelsim
+w1680034149
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/cache2vias.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/cache2vias.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work {+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache} -O0
+!i10b 1
+!s100 DWHYV_@g^5JgINWQh=F752
+!s85 0
+!s108 1680043544.866000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/cache2vias.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/cache2vias.v|
+!s101 -O0
+vcontroleCache
+I_9GOMUcY:MHn8ANLRiB;f1
+VN>QWLODXeNRRlT7m?RQo70
+R1
+w1680043157
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/controleCache.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/controleCache.v
+L0 1
+R2
+r1
+31
+R3
+R4
+ncontrole@cache
+!i10b 1
+!s100 524Fo7A32hloP8:N13ge=2
+!s85 0
+!s108 1680043545.108000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/controleCache.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/controleCache.v|
+!s101 -O0
+vdecodificador
+I]kBTNSHEgaAL0gmEhP^>_3
+VJ^<=^15_ZzdVQBKG;Cn5X3
+R1
+w1679753131
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/decodificador.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/decodificador.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 NISPL>C<lP]QEBWKdJW@]3
+!s85 0
+!s108 1680043545.273000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/decodificador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/decodificador.v|
+!s101 -O0
+vextensor3para8
+ITH`iG7o8DBD;2iml;chKi1
+V0X^XGKdzU;fg04iXL0VJP3
+R1
+w1679952522
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/extensor3para8.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/extensor3para8.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 ^MfmDk?NJoglPDcjPKXM[0
+!s85 0
+!s108 1680043545.029000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/extensor3para8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/extensor3para8.v|
+!s101 -O0
+vmemoriaRam
+IkI=Ndg3Wd3@blgJiokY[T1
+VK47BPdHQFifAWd70f=XG92
+R1
+w1649439438
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/memoriaram.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/memoriaram.v
+L0 39
+R2
+r1
+31
+R3
+R4
+nmemoria@ram
+!i10b 1
+!s100 ci`QeGOhE^8g?UlEz8IID0
+!s85 0
+!s108 1680043545.192000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/memoriaram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/memoriaram.v|
+!s101 -O0
+vparteIII
+IQQUlGe^mH_78AnB`YKI4S3
+V>hiR?4`OHzoEFE[^O[0BB3
+R1
+w1680042731
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/parteIII.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/parteIII.v
+L0 1
+R2
+r1
+31
+R3
+nparte@i@i@i
+R4
+!i10b 1
+!s100 M0zH_[kmmi83[=eWhz?BD2
+!s85 0
+!s108 1680043544.787000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/parteIII.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/parteIII.v|
+!s101 -O0
+vsistema
+IGCgMnUo>JPE1[SBIjWE7g3
+VzbTBn;ON_lKz:`7iV@[F`0
+R1
+w1680042331
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/sistema.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/sistema.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 7iaaI`[oQKQ=L85:4MiLL3
+!s85 0
+!s108 1680043544.947000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/sistema.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/sistema.v|
+!s101 -O0
+vtb_parteIII
+!i10b 1
+!s100 chgBbUm7HMefbQf91Qm2a2
+I`8g?W[>PkgVniYFe^7[jM1
+VZ`;c>fL6T@nVS9>6R<Q6D0
+R1
+w1680043509
+8C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/tb_parteIII.v
+FC:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/tb_parteIII.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1680043545.357000
+!s107 C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/tb_parteIII.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache|C:/altera/13.0sp1/QuartusProjects/LAOC_II/Atividade01/Pratica03_centrada - controlecache/tb_parteIII.v|
+!s101 -O0
+R3
+R4
+ntb_parte@i@i@i

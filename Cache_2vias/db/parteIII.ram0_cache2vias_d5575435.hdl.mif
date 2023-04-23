@@ -1,0 +1,19 @@
+-- begin_signature
+-- cache2vias
+-- end_signature
+WIDTH=3;
+DEPTH=8;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	7 :	XXX;
+	6 :	110;
+	5 :	100;
+	4 :	010;
+	3 :	XXX;
+	2 :	101;
+	1 :	011;
+	0 :	001;
+END;
